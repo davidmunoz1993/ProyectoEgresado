@@ -11,25 +11,28 @@ namespace pureba2register.Models
     {
         [Key]
         public int AgregarOfertaID { get; set; }
-        [DisplayName("Fecha de inicio")]
+        [DisplayName("Fecha de Inicio*")]
         [Required(ErrorMessage = " Este campo no puede ir vacío")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime FechaInicio { get; set; }
-        [DisplayName("Fecha de finalizacion")]
+        [DisplayName(" Fecha de Finalización*")]
         [Required(ErrorMessage = " Este campo no puede ir vacío")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime FechaFinal { get; set; }
-        [DisplayName("Asunto")]
+        [Required(ErrorMessage = " Este campo no puede ir vacío")]
+        [DisplayName("Asunto*")]
         public string Asunto { get; set; }
-        [DisplayName("Perfil requerido")]
+        [Required(ErrorMessage = " Este campo no puede ir vacío")]
+        [DisplayName("Perfil Requerido*")]
         public string PerfilRequerido { get; set; }
-        [DisplayName("Descripción")]
+        [Required(ErrorMessage = " Este campo no puede ir vacío")]
+        [DisplayName("Descripción*")]
         public string Descripcion { get; set; }
-        [Display(Name = "UserName")]
+        [Display(Name = "Nombre Usuario")]
         public string UserName { get; set; }
-        [Display(Name = "estado")]
+        [Display(Name = "Estado")]
         public string Estado { get; set; }
 
 
