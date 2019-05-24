@@ -1,0 +1,61 @@
+﻿@model IEnumerable<pureba2register.Models.UsuarioXOferta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Informacion Profesional</h2>
+
+
+<table class="table">
+
+
+    @foreach (var item in ViewBag.Postulado)
+    {
+
+        <tr>
+        <tr>
+            <td>
+                <label>Estudia Actualmente</label>
+            </td>
+            <td>
+
+                @item.EstudiaActualmente
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Fecha de terminación</label>
+            </td>
+            <td>
+                @item.FechaTerminacionProfesional
+            </td>
+        </tr>
+    <tr>
+        <td>
+            <label>Duración del estudio</label>
+        </td>
+        <td>
+            @item.DuracionProfesional
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Nombre carrera profesional</label>
+        </td>
+        
+        @*<td>
+            @item.NombreCarrera pendiente nombre de la carrera
+        </td>*@
+    </tr>
+        @*<td>
+                @item.TipoEstudio  pendiente por analizar
+            </td>*@
+        <td>
+            @item.CarreraProfesional
+        </td>
+        </tr>
+
+    }
+
+</table>

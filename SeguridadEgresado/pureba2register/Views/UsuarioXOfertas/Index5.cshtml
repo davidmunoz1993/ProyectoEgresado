@@ -1,0 +1,79 @@
+﻿@model IEnumerable<pureba2register.Models.UsuarioXOferta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+
+    @foreach (var item in ViewBag.Postulado)
+    {
+
+        <tr>
+            
+            <td>
+                @item.NombresEgresado
+            </td>
+            <td>
+                @item.PrimerApellidoEgresado
+            </td>
+            <td>
+                @item.SegundoApellidoEgresado
+            </td>
+            <td>
+                @item.FechaNacimientoEgresado
+            </td>
+            <td>
+                @item.NumeroDocumentoEgresado
+            </td>
+            <td>
+                @item.FechaExpedicionDocumento
+            </td>
+            <td>
+                @item.SexoEgresado
+            </td>
+            <td>
+                @item.correoEgresado
+            </td>
+            <td>
+                @item.DireccionResidenciaEgresado
+            </td>
+            <td>
+                @item.DireccionResidenciaEgresado
+            </td>
+            <td>
+                @item.TelefonoMovilEgresado
+            </td>
+            <td>
+                @item.TelefonoFijoEgresado
+            </td>
+            <td>
+                @item.ExtencionTelefonoEgresado
+            </td>
+            <td>
+                @item.NumeroActaGrado
+            </td>
+            <td>
+                @item.FotoEgresado
+            </td>
+            <td>
+                @item.FotoEgresado
+            </td>
+
+            <td>
+                @Html.ActionLink("Referencias Personales", "Index2", new { id = @item.Usuario })|
+                @Html.ActionLink("Informacion Laboral", "Index3", new { id = @item.Usuario })|
+                @Html.ActionLink("Informacion Profesional", "Index4", new { id = @item.Usuario })|
+
+
+            </td>
+        </tr>
+
+    }
+
+</table>

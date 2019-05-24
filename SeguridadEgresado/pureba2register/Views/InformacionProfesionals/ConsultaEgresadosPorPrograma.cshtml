@@ -1,0 +1,50 @@
+﻿@model IEnumerable<pureba2register.Models.InformacionProfesional>
+<h1>  Consulta egresados por programa  </h1>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InformacionPersonal.NombresEgresado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InformacionPersonal.PrimerApellidoEgresado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarreraProfesional.NombreCarrera)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.CarreraProfesional.DescripcionCarrera)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in ViewBag.resultado)
+    {
+        <tr>
+
+            <td>
+                @Url.Content(item.NombresEgresado)
+            </td>
+            <td>
+                @Url.Content(item.PrimerApellidoEgresado)
+            </td>
+            <td>
+                @Url.Content(item.NombreCarrera)
+            </td>
+
+
+
+            <td>
+                @Url.Content(item.DescripcionCarrera)
+            </td>
+
+            <td>
+
+                @Html.ActionLink("Detalles", "Details", new { id = item.InformacionProfesionalID })
+
+            </td>
+        </tr>
+    }
+
+</table>

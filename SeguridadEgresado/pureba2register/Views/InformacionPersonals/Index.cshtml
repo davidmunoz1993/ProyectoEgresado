@@ -1,0 +1,109 @@
+﻿@model IEnumerable<pureba2register.Models.InformacionPersonal>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.NombresEgresado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimerApellidoEgresado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SegundoApellidoEgresado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaNacimientoEgresado)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDocumento.NombreTipoDocumento)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroDocumentoEgresado)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.SexoEgresado)
+
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.correoEgresado)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.TelefonoMovilEgresado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefonoFijoEgresado)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.FotoEgresado)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.NombresEgresado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrimerApellidoEgresado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SegundoApellidoEgresado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaNacimientoEgresado)
+        </td>
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoDocumento.NombreTipoDocumento)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroDocumentoEgresado)
+        </td>
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.SexoEgresado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correoEgresado)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.TelefonoMovilEgresado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelefonoFijoEgresado)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.FotoEgresado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.InformacionPersonalID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.InformacionPersonalID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.InformacionPersonalID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,98 @@
+﻿@model pureba2register.Models.ReferenciasPersonales
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ReferenciasPersonales</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InformacionPersonal.NombresEgresado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InformacionPersonal.NombresEgresado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParentescoReferencia.NombreTipoParentesco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentescoReferencia.NombreTipoParentesco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoReferencia.NombreTipoReferencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoReferencia.NombreTipoReferencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombresReferencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombresReferencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrimerApellidoReferencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrimerApellidoReferencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SegundoApellidoReferencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SegundoApellidoReferencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CargoReferencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CargoReferencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoFijoReferencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoFijoReferencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExtTelefonoReferencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExtTelefonoReferencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonoMovilReferencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonoMovilReferencia)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReferenciasPersonalesID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

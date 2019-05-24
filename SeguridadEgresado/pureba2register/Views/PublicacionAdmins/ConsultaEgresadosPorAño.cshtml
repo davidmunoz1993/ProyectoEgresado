@@ -1,0 +1,56 @@
+﻿
+@model IEnumerable<pureba2register.Models.PublicacionAdmin>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Prueba</h2>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFinalizacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Asunto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Informacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadoPublicacion)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in ViewBag.resultado)
+    {
+        <tr>
+            <td>
+                @Url.Content(item.Informacion)
+            </td>
+            <td>
+                @Url.Content(item.Asunto)
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PublicacionAdminID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PublicacionAdminID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PublicacionAdminID })|
+                @Html.ActionLink("consultas", "consultas", new { id = item.PublicacionAdminID })
+            </td>
+        </tr>
+
+    }
+
+</table>
+

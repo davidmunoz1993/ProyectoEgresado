@@ -1,0 +1,58 @@
+﻿@model pureba2register.Models.PublicacionEgresado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PublicacionEgresado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InformacionPersonal.NombresEgresado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InformacionPersonal.NombresEgresado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInicioPublicacionEgresado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicioPublicacionEgresado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaFinalPublicacionEgresado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaFinalPublicacionEgresado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AsuntoPublicacionEgresado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AsuntoPublicacionEgresado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InformacionPublicacionEgresado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InformacionPublicacionEgresado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PublicacionEgresadoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

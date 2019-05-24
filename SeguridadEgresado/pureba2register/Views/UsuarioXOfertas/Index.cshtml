@@ -1,0 +1,299 @@
+﻿@model IEnumerable<pureba2register.Models.UsuarioXOferta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section Scripts {
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#AllTables').DataTable({
+                language: {
+                    "sProcessing": "Procesando...",
+                    "sLengthMenu": "Mostrar _MENU_ registros",
+                    "sZeroRecords": "No se encontraron resultados",
+                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Buscar:",
+                    "sUrl": "",
+                    "sInfoThousands": ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst": "Primero",
+                        "sLast": "Último",
+                        "sNext": "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+            });
+        });
+    </script>
+
+}
+<h1>   </h1>
+<a>POSTULADOS</a>
+<h1>   </h1>
+
+
+@*<table class="table table-striped display" id="myTable">
+
+    <thead>
+        <tr>
+            <th style="padding-left:100px">
+                <b>Numero de Oferta:</b>
+            </th>
+            <th style="padding-left:100px">
+                <b>Asunto:</b>
+            </th>
+            <th style="padding-left:100px">
+                <b>Nombre:</b>
+            </th>
+            <th style="padding-left:100px">
+                <b>Primer Apellido:</b>
+            </th>
+            <th style="padding-left:100px">
+                <b>Fecha de Expedicion de Documento:</b>
+            </th>
+
+            <th style="padding-left:100px">
+                <b>Segundo Apellido:</b>
+            </th>
+            <th style="padding-left:100px">
+                <b>Fecha de Nacimiento:</b>
+            </th>
+            <th style="padding-left:100px">
+                <b>Número de Documento:</b>
+            </th>
+            <th style="padding-left:100px">
+                <b>Correo Electrónico:</b>
+            </th>
+            <th style="padding-left:100px">
+                <b>Género:</b>
+            </th>
+            <th style="padding-left:100px">
+                <b>Correo Electrónico:</b>
+            </th>
+            <th style="padding-left:100px">
+                <b>Dirección de Residencia:</b>
+            </th>
+            <th style="padding-left:100px">
+                <b>Teléfono Móvil:</b>
+            </th>
+            <th style="padding-left:100px">
+                <b>Teléfono Fijo:</b>
+            </th>
+
+            <th style="padding-left:100px">
+                <b>Ext:</b>
+            </th>
+            <th style="padding-left:100px">
+                <b>Número de acta de grado:</b>
+            </th>
+            <th style="padding-left:100px">
+                <b>Foto:</b>
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in ViewBag.Postulado)
+        {
+
+            <tr>
+                <td style="padding-right:400px;">
+                    @item.Oferta
+                </td>
+
+
+                <td>
+                    @item.Asunto
+                </td>
+
+
+                <td>
+                    @item.NombresEgresado
+                </td>
+
+                <td>
+                    @item.PrimerApellidoEgresado
+                </td>
+
+                <td>
+                    @item.SegundoApellidoEgresado
+                </td>
+
+
+                <td>
+                    @item.FechaNacimientoEgresado
+                </td>
+
+
+                <td>
+                    @item.NumeroDocumentoEgresado
+                </td>
+
+
+                <td>
+                    @item.FechaExpedicionDocumento
+                </td>
+
+                <td>
+                    @item.SexoEgresado
+                </td>
+
+
+                <td>
+                    @item.correoEgresado
+                </td>
+
+                <td>
+                    @item.DireccionResidenciaEgresado
+                </td>
+
+                <td>
+                    @item.DireccionResidenciaEgresado
+                </td>
+
+
+                <td>
+                    @item.TelefonoMovilEgresado
+                </td>
+
+                <td>
+                    @item.TelefonoFijoEgresado
+                </td>
+
+                <td>
+                    @item.ExtencionTelefonoEgresado
+
+
+                <td>
+                    @item.NumeroActaGrado
+                </td>
+
+
+                <td>
+                    @item.FotoEgresado
+                </td>
+
+                <td style="padding-left:100px">
+
+                    @Html.ActionLink("Referencias Personales", "Index2", new { id = @item.Usuario }, new { @class = "btn btn-primary" })
+
+                    @Html.ActionLink("Informacion Laboral", "Index3", new { id = @item.Usuario }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Informacion Profesional", "Index4", new { id = @item.Usuario }, new { @class = "btn btn-primary" })
+                </td>
+
+                <td>
+                    <a>POSTULADOS</a>
+                </td>
+                <td></td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>*@
+
+<table id="AllTables" class="display table-responsive">
+    <thead>
+        <tr>
+            <th> Numero de Oferta:</th>
+            <th>Asunto</th>
+            <th>Nombre Egresado</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Numero de Documento</th>
+            <th>Fecha de Expedicion Documento</th>
+            <th>Genero</th>
+            <th>Correo Electronico</th>
+            <th>Direccion</th>
+            <th>Télefono Movil</th>
+            <th>Telefono Fijo</th>
+            <th>Ext</th>
+            <th>N. Acta de Grado</th>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Postulado)
+        {
+        <tr>
+
+            <td>   @item.Oferta</td>
+
+
+            <td>  @item.Asunto</td>
+            <td>
+                @item.NombresEgresado
+            </td>
+            <td>
+                @item.PrimerApellidoEgresado
+            </td>
+            <td>
+                @item.SegundoApellidoEgresado
+            </td>
+            <td>
+                @item.FechaNacimientoEgresado
+            </td>
+            <td>
+                @item.NumeroDocumentoEgresado
+            </td>
+            <td>
+                @item.FechaExpedicionDocumento
+            </td>
+
+            <td>
+                @item.SexoEgresado
+            </td>
+            <td>
+                @item.correoEgresado
+            </td>
+            <td>
+                @item.DireccionResidenciaEgresado
+            </td>
+            <td>
+                @item.TelefonoMovilEgresado
+            </td>
+
+            <td>
+                @item.TelefonoFijoEgresado
+            </td>
+
+            <td>
+                @item.ExtencionTelefonoEgresado
+
+
+            <td>
+                @item.NumeroActaGrado
+            </td>
+
+            <td> @Html.ActionLink("Referencias Personales", "Index2", new { id = @item.Usuario }, new { @class = "btn btn-primary" })</td>
+            <td> @Html.ActionLink("Referencias Personales", "Index3", new { id = @item.Usuario }, new { @class = "btn btn-primary" })</td>
+            <td> @Html.ActionLink("Referencias Personales", "Index4", new { id = @item.Usuario }, new { @class = "btn btn-primary" })</td>
+
+
+
+
+
+        </tr>
+        }
+        </tbody>
+        
+</table>

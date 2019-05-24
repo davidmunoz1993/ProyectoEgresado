@@ -1,0 +1,100 @@
+﻿@model IEnumerable<pureba2register.Models.AgregarOferta>
+
+@{
+    bool mostrar = false;
+}
+
+<table class="table">
+
+
+    @foreach (var item in ViewBag.MuestraEstado)
+    {
+
+
+
+        <tr>
+
+            <td><h2>Oferta laboral</h2></td>
+
+        </tr>
+        <tr>
+
+            <td style="background-color:gray; color:white">
+                <label>Fecha de inicio:</label>
+                <input type="hidden" name="name" id="Oferta" value="@item.AgregarOfertaID" />
+            </td>
+            <td>
+                @item.FechaInicio
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color:gray; color:white">
+                <label>Fecha final:</label>
+            </td>
+            <td>
+                @item.FechaFinal
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color:gray; color:white">
+                <label>Asunto:</label>
+            </td>
+            <td>
+                @item.Asunto
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color:gray; color:white">
+                <label>Perfil requerido:</label>
+            </td>
+            <td>
+                @item.PerfilRequerido
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color:gray; color:white">
+                <label>Descripcion:</label>
+            </td>
+            <td>
+                @item.Descripcion
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color:gray; color:white">
+                <label>Nombre de usuario:</label>
+            </td>
+            <td>
+                @item.UserName
+            </td>
+        </tr>
+        <tr>
+
+            <td style="background-color:gray; color:white">
+                <label> @item.AgregarOfertaID</label>
+            </td>
+
+
+            <td>
+               
+                    @Html.ActionLink("Details", "Details", new { id = item.AgregarOfertaID })
+               
+             
+            </td>
+        </tr>
+
+
+
+    }
+
+</table>
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title EgreSoft</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class = "navbar-brand">Egresoft</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            if (User.IsInRole("Empresa"))
+                            {
+
+                            <li class="dropdown">
+
+                            <li>@Html.ActionLink("Inicio", "Index", "Home/About")</li>
+                            <li>@Html.ActionLink("Agregar Oferta", "Index", "AgregarOfertas/Create")</li>
+                            <li>@Html.ActionLink("Consultar Ofertas", "Index", "AgregarOfertas/Ver")</li>
+                            <li>@Html.ActionLink("Perfil Empresa", "Index", "PerfilEmpresas/Ver")</li>
+                            <li>@Html.ActionLink("Postulados", "Index", "UsuarioXOfertas/Index")</li>
+
+
+
+
+
+
+                            </li>
+                        }
+                    }
+                        </li>
+
+                        <li>
+
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (User.IsInRole("Egresado"))
+                                {
+                                <li>@Html.ActionLink("Inicio", "Index", "Home/Contact")</li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        Egresado
+                                        <span class="caret"></span>
+
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li>@Html.ActionLink("Información personal", "Index", "InformacionPersonals/Ver")</li>
+                                        <li>@Html.ActionLink("Referencias personales", "Index", "ReferenciasPersonales/Ver")</li>
+                                        <li>@Html.ActionLink("Informacion laboral", "Index", "InformacionLaborals/Ver")</li>
+                                        <li>@Html.ActionLink("Informacion profesional", "Index", "InformacionProfesionals/Ver")</li>
+                                        <li>@Html.ActionLink("Ofertas laborales", "Index", "OfertaLaboralVistaEgresadoes/Index")</li>
+
+                                    </ul>
+                                </li>
+
+                                <li>@Html.ActionLink("Publicaciones", "Index", "PublicacionEgresadoes")</li>
+
+
+                            }
+                        }
+                            </li>
+                            <li>
+
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    if (User.IsInRole("Admin"))
+                                    {
+                                    <li class="dropdown">
+
+
+
+
+                                    <li>@Html.ActionLink("Publicaciones en espera", "Index", "ConsultarOfertas")</li>
+                                    <li>@Html.ActionLink("Publicación", "Index", "PublicacionAdmins")</li>
+                                    <li>@Html.ActionLink("Consultar Ofertas", "Index", "ConsultarOfertas")</li>
+                                    <li>@Html.ActionLink("PruebaAdmin", "Index", "pruebaEstadoes/Index")</li>
+
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            Egresados
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+
+                                            <li>@Html.ActionLink("parentesco", "Index", "ParentescoReferencias")</li>
+                                            <li>@Html.ActionLink("Carrera profesional", "Index", "CarreraProfesionals")</li>
+                                            <li>@Html.ActionLink("Rango salarial", "Index", "RangoSalarials")</li>
+                                            <li>@Html.ActionLink("Tipo referencia", "Index", "TipoReferencias")</li>
+                                            <li>@Html.ActionLink("Tipo estudio", "Index", "TipoEstudios")</li>
+
+
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            Consultas
+                                            <span class="caret"></span>
+
+
+                                        </a>
+                                        <ul class="dropdown-menu">
+
+                                            <li>@Html.ActionLink("Consultar egresados mujeres", "ConsultaEgresadosMujeres", "InformacionPersonals")</li>
+                                            <li>@Html.ActionLink("Consultar egresados hombres", "ConsultaEgresadosHombres", "InformacionPersonals")</li>
+                                            <li>@Html.ActionLink("Consultar egresados laborando", "ConsultaEgresadosLaborando", "InformacionLaborals")</li>
+                                            <li>@Html.ActionLink("Consultar egresados por programa", "ConsultaEgresadosPorPrograma", "InformacionProfesionals")</li>
+                                            <li>@Html.ActionLink("Consultar egresados estudiando actualmente", "ConsultaEgresadosEstudiando", "InformacionProfesionals")</li>
+                                            <li>@Html.ActionLink("Consultar egresados por año", "ConsultaEgresadosPorAno", "InformacionProfesionals")</li>
+
+
+                                        </ul>
+
+
+                                    </li>
+                                    </li>
+                                }
+                            }
+                                </li>
+
+
+                            </ul>
+
+
+
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            </div>
+            <footer class="colorfondo">
+                <p>&copy; @DateTime.Now.Year - Egresoft</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

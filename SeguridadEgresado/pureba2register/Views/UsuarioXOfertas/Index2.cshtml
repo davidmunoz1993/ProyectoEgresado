@@ -1,0 +1,89 @@
+﻿@model IEnumerable<pureba2register.Models.UsuarioXOferta>
+
+
+
+<h2>Referencias Personales</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+
+    @foreach (var item in ViewBag.Postulado)
+    {
+
+        <tr>
+        <tr>
+            <td>
+                <b>Nombre de la referencia:</b>
+            </td>
+            <td>
+                @item.NombresReferencia
+            </td>
+        </tr>
+            <td>
+                <b>Primer Apellido de la referencia:</b>
+            </td>
+            <td>
+                @item.PrimerApellidoReferencia
+            </td>
+            <td>
+                <b>Segundo Apellido de la referencia:</b>
+            </td>
+            <td>
+                @item.SegundoApellidoReferencia
+            </td>
+            <td>
+                @item.CargoReferencia
+            </td>
+            <td>
+                @item.TelefonoFijoReferencia
+            </td>
+            <td>
+                @item.ExtTelefonoReferencia
+            </td>
+            <td>
+                @item.TelefonoMovilReferencia
+            </td>
+            <td>
+                @item.InformacionPersonal
+            </td>
+            <td>
+                @item.ParentescoReferencia
+            </td>
+            <td>
+                @item.TipoReferencia
+            </td>
+            @*<td>
+                    @item.correoEgresado
+                </td>
+                <td>
+                    @item.DireccionResidenciaEgresado
+                </td>
+                <td>
+                    @item.DireccionResidenciaEgresado
+                </td>
+                <td>
+                    @item.TelefonoMovilEgresado
+                </td>
+                <td>
+                    @item.TelefonoFijoEgresado
+                </td>
+                <td>
+                    @item.ExtencionTelefonoEgresado
+                </td>
+                <td>
+                    @item.NumeroActaGrado
+                </td>
+                <td>
+                    @item.FotoEgresado
+                </td>
+                <td>
+                    @item.FotoEgresado
+                </td>*@
+
+        </tr>
+
+        }
+
+    </table>

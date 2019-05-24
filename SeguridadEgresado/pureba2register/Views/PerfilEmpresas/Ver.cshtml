@@ -1,0 +1,84 @@
+﻿@model IEnumerable<pureba2register.Models.PerfilEmpresa>
+
+@{
+    ViewBag.Title = "Perfil empresa";
+}
+
+
+<p>
+    
+</p>
+<fload>
+    <table class="table">
+
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td style="background-color:black; color:white">
+                    @*@Html.DisplayFor(modelItem => item.Imagen)*@
+
+                    <img style="width:20%" src="@Url.Action("getImage","PerfilEmpresas",new { id = item.CrearPerfilEmpresaID})">
+                </td>
+            </tr>
+            <tr>
+                <th style="background-color:black; color:white">
+                    @Html.DisplayNameFor(model => model.NombreEmpresa)
+                </th>
+
+                <td style="background-color:black; color:white">
+                    @Html.DisplayFor(modelItem => item.NombreEmpresa)
+                </td>
+            </tr>
+            <tr>
+                <th style="background-color:black; color:white">
+                    @Html.DisplayNameFor(model => model.Nit)
+                </th>
+                <td style="background-color:black; color:white">
+                    @Html.DisplayFor(modelItem => item.Nit)
+                </td>
+            </tr>
+            <tr>
+                <th style="background-color:black; color:white">
+                    @Html.DisplayNameFor(model => model.DireccionEmpresa)
+                </th>
+                <td style="background-color:black; color:white">
+                    @Html.DisplayFor(modelItem => item.DireccionEmpresa)
+                </td>
+            </tr>
+            <tr>
+                <th style="background-color:black; color:white">
+                    @Html.DisplayNameFor(model => model.DireccionEmpresa)
+                </th>
+                <td style="background-color:black; color:white">
+                    @Html.DisplayFor(modelItem => item.NumeroEgresado)
+                </td>
+            </tr>
+            <tr>
+                <th style="background-color:black; color:white">
+                    @Html.DisplayNameFor(model => model.DescripccionEmpresa)
+                </th>
+                <td style="background-color:black; color:white">
+                    @Html.DisplayFor(modelItem => item.DescripccionEmpresa)
+                </td>
+            </tr>
+            <tr>
+                <th style="background-color:black; color:white">
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <td style="background-color:black; color:white">
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color:black; color:white">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CrearPerfilEmpresaID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CrearPerfilEmpresaID }) |
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</fload>

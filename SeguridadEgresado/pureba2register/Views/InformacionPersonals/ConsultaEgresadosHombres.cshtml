@@ -1,0 +1,84 @@
+﻿
+@model IEnumerable<pureba2register.Models.InformacionPersonal>
+
+<h1>  Consulta egresados hombres  </h1>
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.NombresEgresado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimerApellidoEgresado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SegundoApellidoEgresado)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroDocumentoEgresado)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.SexoEgresado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correoEgresado)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.TelefonoMovilEgresado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroActaGrado)
+        </th>
+
+
+
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in ViewBag.resultado)
+    {
+        <tr>
+
+            <td>
+                @Url.Content(item.NombresEgresado)
+            </td>
+            <td>
+                @Url.Content(item.PrimerApellidoEgresado)
+            </td>
+            <td>
+                @Url.Content(item.SegundoApellidoEgresado)
+            </td>
+
+            <td>
+                @Url.Content(item.NumeroDocumentoEgresado)
+            </td>
+
+            <td>
+                @Url.Content(item.SexoEgresado)
+            </td>
+            <td>
+                @Url.Content(item.correoEgresado)
+            </td>
+
+            <td>
+                @Url.Content(item.TelefonoMovilEgresado)
+            </td>
+
+            <td>
+                @Url.Content(item.NumeroActaGrado)
+            </td>
+            <td>
+
+                @Html.ActionLink("Detalles", "Details", new { id = item.InformacionPersonalID })
+
+            </td>
+
+        </tr>
+    }
+
+</table>

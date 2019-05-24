@@ -1,0 +1,83 @@
+﻿@model pureba2register.Models.AgregarOferta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<div class="form-horizontal">
+    <div>
+        <h4>Postular Oferta</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FechaInicio)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FechaInicio)
+
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FechaFinal)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FechaFinal)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Asunto)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Asunto)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Descripcion)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.UserName)
+            </dt>
+            <dd>
+                <input type="hidden" name="name" id="Oferta" value="@Model.AgregarOfertaID" />
+
+                @Html.DisplayFor(model => model.UserName)
+            </dd>
+        </dl>
+
+
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+
+               
+                    <input type="button" onclick="agregar()" id="btnPostularse" value="Postularse" class="btn btn-primary" />
+         
+
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Volver", "Index")
+</p>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+        integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+        crossorigin="anonymous"></script>
+<script>
+    function agregar() {
+                console.log(1);
+        var url = "@Url.Action("Details", "OfertaLaboralVistaEgresadoes")";
+        var data = { Oferta: $("#Oferta").val() }
+
+        $.post(url, data).done(function () {
+            alert("Registro exitoso")
+            window.location.href = "../../Home";
+        })
+    }
+</script>

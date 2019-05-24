@@ -1,0 +1,70 @@
+﻿@model IEnumerable<pureba2register.Models.InformacionLaboral>
+
+
+<h2>ConsultaEgresadosLaborando</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InformacionPersonal.NombresEgresado)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.TrabajaActualmente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombresJefeLaboral)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApellidoJefeLaboral)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefonoJefeLaboral)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreEmpresaLaboral)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.CargoOcupacionLaboral)
+        </th>
+       
+        <th></th>
+    </tr>
+
+    @foreach (var item in ViewBag.resultado)
+    {
+        <tr>
+            <td>
+                @Url.Content(item.NombresEgresado)
+            </td>
+            
+            <td>
+                @Url.Content(item.TrabajaActualmente)
+            </td>
+            <td>
+                @Url.Content(item.NombresJefeLaboral)
+            </td>
+            <td>
+                @Url.Content(item.ApellidoJefeLaboral)
+            </td>
+            <td>
+                @Url.Content( item.TelefonoJefeLaboral)
+            </td>
+            <td>
+                @Url.Content(item.NombreEmpresaLaboral)
+            </td>
+          
+            <td>
+                @Url.Content(item.CargoOcupacionLaboral)
+            </td>
+            
+            <td>
+              
+                @Html.ActionLink("Detalles", "Details", new { id = item.InformacionLaboralID }) 
+              
+            </td>
+        </tr>
+    }
+
+</table>

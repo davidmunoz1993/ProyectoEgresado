@@ -1,0 +1,54 @@
+﻿@model IEnumerable<pureba2register.Models.UsuarioXOferta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+
+    @foreach (var item in ViewBag.Postulado)
+    {
+
+        <tr>
+            <td>
+                <lable>Nombre de la referencia:</lable>
+                @item.TrabajaActualmente
+            </td>
+            <td>
+                @item.NombresJefeLaboral
+            </td>
+            <td>
+                @item.ApellidoJefeLaboral
+            </td>
+            <td>
+                @item.TelefonoJefeLaboral 
+            </td>
+            <td>
+                @item.NombreEmpresaLaboral
+            </td>
+            <td>
+                @item.DireccionEmpresaLaboral
+            </td>
+            <td>
+                @item.CargoOcupacionLaboral
+            </td>
+            <td>
+                @item.fechaIngresoLaboral
+            </td>
+            <td>
+                @item.RangoSalarial
+            </td>
+           
+           
+                    
+
+        </tr>
+
+    }
+
+</table>
